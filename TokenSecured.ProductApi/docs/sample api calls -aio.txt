@@ -1,0 +1,70 @@
+
+username bush
+password bush@gmail.com
+grant_type password
+
+http://localhost/TokenSecured.ProductApi/api/values
+
+===================
+
+get token:
+
+POST http://localhost/TokenSecured.ProductApi/token HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+cache-control: no-cache
+Postman-Token: 47d874fd-aaf9-42f5-8d50-cb9cbedb92b5
+User-Agent: PostmanRuntime/7.1.5
+Accept: */*
+Host: localhost
+accept-encoding: gzip, deflate
+content-length: 59
+Connection: keep-alive
+
+username=bush&password=bush%40gmail.com&grant_type=password
+
+=========
+
+ret new token with refresh token...
+
+POST http://localhost/TokenSecured.ProductApi/token HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+cache-control: no-cache
+Postman-Token: 0bdb7bb2-83fd-4c5b-8402-7edd7976c9b3
+User-Agent: PostmanRuntime/7.1.5
+Accept: */*
+Host: localhost
+accept-encoding: gzip, deflate
+content-length: 75
+Connection: keep-alive
+
+refresh_token=511d8ac2-156b-49c0-a0c9-18e6e07fde7d&grant_type=refresh_token
+
+==========
+
+call api with token:
+
+GET http://localhost/TokenSecured.ProductApi/api/Authentication/AuthenticatedUser2 HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Authorization: bearer FjmTPF4lhNZslmR-Qd02cJChD4aF7G2OSvtxq039WSwzkMd3797G56Rbg82la4LeEfIYFRYUkL-4H21bvT6ZlooQ66BSx7u9iHMVcLkSnfdP2yMS3S6CMeev_A1dB5TTL4p6JwR4QFldSfmOaEq8IXMHR851lxr-X9sXz5cPVoP8R0nYuJi7d591KNkrecRWmgwIaKgd0bkEZS_xzyn6XwVzBsDPdThJ0u9vB1JJr_md3bZTlTUQlO_u63McuokAJVxxwYM-oj_9mZPFXrsxMlosY692oVXXDMUTPcJQNKekGVi8XPZctUyVCGpdpnqE
+cache-control: no-cache
+Postman-Token: 1dd279dc-9b27-4c5f-972f-39c72257ade7
+User-Agent: PostmanRuntime/7.1.5
+Accept: */*
+Host: localhost
+accept-encoding: gzip, deflate
+Connection: keep-alive
+
+============
+
+GET http://localhost/TokenSecured.ProductApi/api/values HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Authorization: bearer rS0zIIwb171NNFnleYl3fMF7mVg8sU2nL6JviwtzLfDEag9kxcbhw5O_vksu2z6FrFIwjAUnN30IovhBcg0G4ZYHRYbqH-WWkyg1NfypuzsGW9PPCFVL6Lhds4am_vSvtMAR5oBf_yuRKi98CgIwCpEdmDrHB3fx7zQEBT2MSNdPwAgGRgpKmUNF57VT6adXkMj5JiJLbNXX0YWuA3iru99Eo5aSsGTJOdLUm322PSpmdFDBz0y3NNohxWzGGSkWUlKO4BbdXCl0vr3kujkCbf12H1nrIX7sH6_TcJ1H09K3TiOagw19iz_7zGVpun76
+cache-control: no-cache
+Postman-Token: e75b6aa9-b2d6-4478-9372-276d48f434e6
+User-Agent: PostmanRuntime/7.1.5
+Accept: */*
+Host: localhost
+accept-encoding: gzip, deflate
+Connection: keep-alive
+
+
