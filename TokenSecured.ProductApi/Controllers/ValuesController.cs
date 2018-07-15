@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;
+using System.Web.Http; 
 
-namespace Oauth2.TokenSecured.ProductApi.Controllers
+namespace TokenSecured.ProductApi.Controllers
 {
     [Authorize]
     public class ValuesController : ApiController
     {
         // GET api/values
+        [HttpGet]
+        //[Route("NoAuth")]
+        //[Authorize(Roles = "*")]
+        //[Authorize]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
